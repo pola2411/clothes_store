@@ -1,0 +1,25 @@
+.setting
+{
+    background-color: rgb(1, 1, 29);
+    color: rgb(251, 251, 251);
+    font-weight: bold;
+    box-shadow: -10px -10px 10px rgba(28, 12, 204, 0.377);
+}
+.title
+{
+ margin-bottom: 20px;
+
+ background-color: rgba(216, 227, 237, 0.339);
+ text-align: center;
+
+
+}
+
+
+.title .h1
+{
+
+
+    box-shadow: -10px -10px 10px rgba(28, 12, 204, 0.377);
+
+}

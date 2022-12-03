@@ -1,0 +1,1 @@
+@extends('dashoard.layout.layouts')
