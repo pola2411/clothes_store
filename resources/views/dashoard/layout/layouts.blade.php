@@ -26,7 +26,8 @@
     <link href="{{ asset('dashboard/assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
     <link href="{{ asset('dashboard/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
     <link href="{{ asset('dashboard/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('dashboard/dropify.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://jeremyfagis.github.io/dropify/dist/css/dropify.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('dashboard/assets/css/style.css') }}" rel="stylesheet">
@@ -287,7 +288,7 @@
     <main id="main" class="main">
 
         @yield('body')
-        
+
     </main>
     <footer id="footer" class="footer">
         <div class="copyright">
@@ -310,14 +311,15 @@
     <script src="{{ asset('dashboard/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
     <script src="{{ asset('dashboard/assets/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('dashboard/assets/vendor/php-email-form/validate.js') }}"></script>
-    <script src="{{ asset('dashboard/dropify.js') }}"></script>
 
     <!-- Template Main JS File -->
     <script src="{{ asset('dashboard/assets/js/main.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://jeremyfagis.github.io/dropify/dist/js/dropify.min.js"></script>
 
-    <script>
-        $('.dropify').dropify();
-    </script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
+        <script> $('.dropify').dropify(); </script>
 </body>
 
 </html>

@@ -46,7 +46,7 @@
                       <div class="form-group">
                         <label for="exampleInputEmail1">Logo</label>
                         <input type="file" name="logo" class="form-control dropify" id="exampleInputEmail1" data-default-file="{{asset($setting->logo)}}">
-                        {{asset($setting->logo)}}
+
 
                       </div>
                       <div class="form-group">

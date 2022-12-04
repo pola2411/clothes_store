@@ -14,9 +14,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 Route::get('/',function(){
-return view('welcome');
+return view('dashoard.categoryes.index');
 
 })->name('index');
+Route::get('/d',function(){
+    return view('dashoard.categoryes.edit');
+
+    })->name('index2');
 
 Auth::routes();
 
