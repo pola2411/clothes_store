@@ -32,7 +32,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="card">
+                    <div class="card col-md-8">
                         <div class="card-header">
                             <form class="form-inline search-form search-box">
 
@@ -53,13 +53,13 @@
                                         <tr>
                                             <th>الإسم</th>
                                             <th>الصورة</th>
-                                            <th>القسم الرئيسي</th>
+                                            <th>القسم الرئيسى</th>
                                             <th></th>
 
                                         </tr>
                                     </thead>
-
                                     <tbody>
+
 
                                     </tbody>
                                 </table>
@@ -78,9 +78,18 @@
             aria-hidden="true">
             <div class="modal-dialog" role="document">
 
-                    <div class="modal-content">
-                        <form action="" method="POST" enctype="multipart/form-data">
-                            @csrf
+                <div class="modal-content">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                    <form action="{{ route('categores.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="modal-header">
                             <h5 class="modal-title f-w-600" id="exampleModalLabel">اضافة قسم جديد </h5>
                             <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"><span
@@ -89,9 +98,10 @@
                         <div class="modal-body">
 
                             <div class="form">
+
                                 <div class="form-group">
                                     <label for="validationCustom01" class="mb-1">الإسم :</label>
-                                    <input class="form-control" id="validationCustom01" type="text" name="name">
+                                    <input class="form-control" id="validationCustom01" type="text" name="title">
                                 </div>
 
 
@@ -101,10 +111,12 @@
                                     <label for="validationCustom01" class="mb-1">القسم الرئيسي </label>
                                     <select name="parent_id" id="" class="form-control">
                                         <option value="">قسم رئيسي</option>
-                                        @foreach ($maincategory as $category )
-                                        <option value="{{$category->id}}">{{$category->title}}</option>
-
-                                        @endforeach
+                                        @forelse ($main as $s)
+                                        
+                                        <option value="{{ $s->id }}">{{ $s->title }}</option>
+                                        @empty
+                                            <option value="">not found</option>
+                                        @endforelse
 
                                     </select>
                                 </div>
@@ -124,7 +136,7 @@
                         </div>
                     </form>
 
-                    </div>
+                </div>
 
             </div>
         </div>
@@ -140,7 +152,7 @@
     <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
-            <form action="" method="POST">
+            <form action="{{ route('category.delete') }}" method="POST">
                 <div class="modal-content">
 
                     <div class="modal-body">
@@ -169,4 +181,53 @@
 @endsection
 
 
+@push('java')
+    <script type="text/javascript">
+        $(function() {
 
+            var table = $('#editableTable').DataTable({
+
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('category.getall') }}",
+                columns: [{
+                        data: "title",
+                        name: "title"
+
+                    },
+                    {
+                        data: "image",
+                        name: "image"
+
+
+                    },
+                    {
+                        data: "parent",
+                        name: "parent"
+
+
+                    },
+                    {
+                        data: "action",
+                        name: "action"
+
+                    }
+
+
+
+
+                ]
+
+
+
+            });
+        });
+        $('#editableTable tbody').on('click', '#deleteBtn', function(argument) {
+
+            var id = $(this).attr("data-id");
+            $('#deletemodal #id').val(id);
+
+
+        })
+    </script>
+@endpush

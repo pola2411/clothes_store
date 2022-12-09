@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dashboard\CategoryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,14 +15,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 Route::get('/',function(){
-return view('dashoard.categoryes.index');
+return view("welcome");
 
 })->name('index');
-Route::get('/d',function(){
-    return view('dashoard.categoryes.edit');
 
-    })->name('index2');
 
 Auth::routes();
-
 

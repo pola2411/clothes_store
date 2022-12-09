@@ -10,7 +10,12 @@ Route::get('/',[AdminController::class,'index'])->name('dashboard');
 
 Route::get('/settings',[SettingController::class,'index'])->name('setting.index');
 Route::put('/setting/{setting}/update',[SettingController::class,'update'])->name('setting.update');
+Route::delete('/categores/delete',[CategoryController::class,'delete'])->name('category.delete');
 
 
- Route::get('/getall',[CategoryController::class,'getall'])->name('category.getall');
-Route::resource('/categores',CategoryController::class);
+ Route::get('/categores/ajar',[CategoryController::class,'getall'])->name('category.getall');
+
+Route::resource('/categores',CategoryController::class)->except('destroy','create','show');
+
+
+
