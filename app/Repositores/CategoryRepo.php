@@ -3,7 +3,7 @@
 namespace App\Repositores;
 use App\Models\Categories;
 
-class CategoryRepo{
+class CategoryRepo implements RepositoreyInterface{
 
    public $categories;
    ////////////////////
@@ -13,6 +13,7 @@ class CategoryRepo{
 
   }
 
+
   ///////////////////////////////////////////////////
   public function getmain(){
 
@@ -20,6 +21,20 @@ class CategoryRepo{
 
 
   }
+  ///////////////////////////////////////////////////
+
+  public function baseQuery($relationes=[]){
+
+    $query=$this->categories->select('*')->with($relationes);
+    return $query;
+
+
+
+
+  }
+
+
+
   ////////////////////////////////////////////////////
 
   public function store($params){

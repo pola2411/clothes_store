@@ -13,7 +13,7 @@ class OrderDetails extends Model
     public function userorder(){
         return $this->belongsTo(UserOrder::class,'order_id');
     }
-    public function prod_s_c(){
-        return $this->belongsTo(ProdSizeColor::class,"prod_s_c_id");
+    public function peoduct(){
+        return $this->belongsTo(Products::class,"prod_s_c_id");
     }
 }

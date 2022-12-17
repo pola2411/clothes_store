@@ -14,6 +14,9 @@ class SettingController extends Controller
 public function index(){
     return view('dashoard.setting.index');
 }
+
+
+////////////////////////////////////////////////////////
 public function update(SettingUpdateRequest $request,setting $setting){
 
     $setting->update($request->validated());
@@ -35,4 +38,5 @@ public function update(SettingUpdateRequest $request,setting $setting){
     return redirect()->route('setting.index')->with('sussfull','sussfull update');
 
 }
+/////////////////////////////////////////////////////////////////
 }

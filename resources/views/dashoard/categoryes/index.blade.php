@@ -32,7 +32,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="card col-md-8">
+                    <div class="card col-md-12">
                         <div class="card-header">
                             <form class="form-inline search-form search-box">
 
@@ -101,7 +101,7 @@
 
                                 <div class="form-group">
                                     <label for="validationCustom01" class="mb-1">الإسم :</label>
-                                    <input class="form-control" id="validationCustom01" type="text" name="title">
+                                    <input class="form-control" id="validationCustom01" type="text" name="title" value="{{old('title')}}">
                                 </div>
 
 
@@ -112,7 +112,7 @@
                                     <select name="parent_id" id="" class="form-control">
                                         <option value="">قسم رئيسي</option>
                                         @forelse ($main as $s)
-                                        
+
                                         <option value="{{ $s->id }}">{{ $s->title }}</option>
                                         @empty
                                             <option value="">not found</option>
