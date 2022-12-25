@@ -56,6 +56,7 @@
                                             <th>الخصم</th>
                                             <th>الالوان</th>
                                             <th>المقاسات</th>
+                                            <th>الكميه</th>
 
                                             <th></th>
 
@@ -157,6 +158,11 @@
 
 
                         },
+                        {
+                            data:'quantity',
+                            name:'quantity'
+
+                        },
 
                         {
                             data: 'action',
@@ -176,9 +182,9 @@
             });
         });
 
-        $('#editableTable tbody').on('click','#deleteBtn',function(argument){
+        $('#editableTable tbody').on('click', '#deleteBtn', function(argument) {
 
-            var id=$(this).attr('data-id');
+            var id = $(this).attr('data-id');
 
             $('#deletemodal #id').val(id);
 
@@ -187,19 +193,5 @@
 
 
         })
-
     </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
 @endpush

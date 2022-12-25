@@ -96,6 +96,12 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="validationCustom02" class="col-form-label">
+                                            الكميه</label>
+                                            <input class="form-control" id="validationCustom02" type="text"
+                                                name="quantity" value="{{$query->quantity}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="validationCustom02" class="col-form-label">
                                                 الالوان المتاحه</label>
                                             <select class="form-control colors" multiple="multiple"name="colors[]"
                                                 id="">

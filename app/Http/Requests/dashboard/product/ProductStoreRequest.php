@@ -27,6 +27,7 @@ class ProductStoreRequest extends FormRequest
             'description'=>'required',
             'main_price'=>'numeric',
             'main_desconde'=>'numeric',
+            'quantity'=>'required|numeric',
             'colors'=>'nullable|array',
             'colors.*'=>'nullable|string',
             'sizes'=>'nullable|array',

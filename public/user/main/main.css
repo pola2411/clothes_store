@@ -1,0 +1,76 @@
+.none{
+    display: none;
+
+}
+.block{
+    display: block;
+}
+.con{
+   margin-top: 5px;
+   margin-bottom: 21px;
+
+
+}
+.first_card{
+    background-color: rgb(237, 244, 236) !important;
+    box-shadow: 10px 10px 10px rgb(15, 2, 35);
+    text-align: center;
+
+
+
+}
+
+
+
+.total{
+    margin-top: 30px;
+}
+.parent{
+    margin-top: 30px;
+    cursor: pointer;
+    color: white !important;
+    background-color: rgba(10, 0, 62, 0.979);
+}
+.parent #btn h1{
+
+   color: rgb(10, 52, 88);
+}
+.parent #btn{
+    color: white;
+}
+.fashion_section{
+    margin: 20px auto;
+
+}
+.child h4{
+    color: wheat;
+}
+.row{
+    margin-top: 30px;
+ justify-content:flex-start;
+
+}
+.prod_view
+{
+    background-color: rgb(248, 246, 246);
+    color: rgb(117, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 29px;
+    box-shadow: 10px 10px 10px rgb(147, 0, 0);
+
+    margin-bottom: 20px;
+    justify-items: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.prod_view img
+{
+    border-radius: 50px;
+    width: 100%;
+    height: auto;
+
+}
+.show_prod{
+
+
+    margin: 30px auto;
+}
