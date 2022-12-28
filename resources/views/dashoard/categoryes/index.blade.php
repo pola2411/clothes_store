@@ -80,14 +80,14 @@
 
                 <div class="modal-content">
                     @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{ route('categores.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-header">
@@ -101,7 +101,8 @@
 
                                 <div class="form-group">
                                     <label for="validationCustom01" class="mb-1">الإسم :</label>
-                                    <input class="form-control" id="validationCustom01" type="text" name="title" value="{{old('title')}}">
+                                    <input class="form-control" id="validationCustom01" type="text" name="title"
+                                        value="{{ old('title') }}">
                                 </div>
 
 
@@ -112,8 +113,7 @@
                                     <select name="parent_id" id="" class="form-control">
                                         <option value="">قسم رئيسي</option>
                                         @forelse ($main as $s)
-
-                                        <option value="{{ $s->id }}">{{ $s->title }}</option>
+                                            <option value="{{ $s->id }}">{{ $s->title }}</option>
                                         @empty
                                             <option value="">not found</option>
                                         @endforelse

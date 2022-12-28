@@ -3,6 +3,7 @@
 use App\Http\Controllers\dashboard\AdminController;
 use App\Http\Controllers\dashboard\SettingController;
 use App\Http\Controllers\dashboard\CategoryController;
+use App\Http\Controllers\dashboard\OrderController;
 use App\Http\Controllers\dashboard\ProductController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -21,4 +22,5 @@ Route::get('/product/ajax',[ProductController::class,'getall'])->name('product.g
 Route::delete('/product/delete',[ProductController::class,'delete'])->name('product.delete');
 Route::get('/product/prodimage/{id}',[ProductController::class,'deleteimage'])->name("delete.images");
 Route::resource('/product',ProductController::class)->except('show','destroy');
-
+Route::resource('/orders',OrderController::class);
+Route::get('/getyajra_orders',[OrderController::class,'getyajra'])->name('order.ajax');

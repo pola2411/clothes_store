@@ -21,6 +21,6 @@ class Products extends Model
    return $this->hasMany(ProdImage::class,'prod_s_c_id');
  }
  public function order_detals(){
-   return $this->hasMany(OrderDetails::class,"prod_s_c_id");
+   return $this->hasMany(OrderDetails::class,"prod_id");
 }
 }

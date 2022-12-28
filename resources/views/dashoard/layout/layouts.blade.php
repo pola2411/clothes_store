@@ -45,9 +45,9 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
-                <img src="{{ asset('dashboard/assets/img/logo.png') }}" alt="">
-                <span class="d-none d-lg-block">NiceAdmin</span>
+            <a href="{{route('dashboard')}}" class="logo d-flex align-items-center">
+
+                <span class="d-none d-lg-block">Clothes Store</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -292,10 +292,10 @@
     </main>
     <footer id="footer" class="footer">
         <div class="copyright">
-            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>OBJECT</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="https://www.facebook.com/pola.nabil.372/">POLA NABIL</a>
         </div>
     </footer><!-- End Footer -->
 

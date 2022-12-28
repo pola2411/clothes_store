@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class check_admin
+class user_check
 {
     /**
      * Handle an incoming request.
@@ -17,12 +17,10 @@ class check_admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->tybe=='admin'){
-        return $next($request);
-        }
-
-            Auth::logout();
-            return redirect()->route('login');
-
+        if(auth()->user()->tybe=='user'){
+            return $next($request);
+            }
+                Auth::logout();
+                return redirect()->route('login');
     }
 }

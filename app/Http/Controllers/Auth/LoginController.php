@@ -44,7 +44,10 @@ class LoginController extends Controller
          return "dashbord";
         }
 
-           redirect()->route('index');
+        elseif(auth()->user()->tybe=='user'){
+            return "/";
+        }
+        redirect()->route('register');
 
 
     }

@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',[IndexController::class,'index'])->name('index_first');
+Route::get('/product/{id}',[IndexController::class,'prod_page'] )->name('user.prod');
+Route::get('/prod_yajra/{id}',[IndexController::class,'yajra_prod'])->name('prod.yajra');
 
 
 
